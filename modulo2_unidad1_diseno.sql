@@ -2,9 +2,6 @@
 
 CREATE DATABASE RetailPro;
 
--- la ponemos en uso --
-
-USE RetailPro;
 
 --paso 1: Crear tablas
 
@@ -12,7 +9,7 @@ USE RetailPro;
 
 CREATE TABLE clientes(
 
-id_clientes INT PRIMARY KEY,
+id_cliente INT PRIMARY KEY,
 nombre VARCHAR(100),
 perfil_bio TEXT,
 fecha_registro DATE
@@ -28,12 +25,12 @@ VARCHAR (100) para nombre porque es un buen margen de caracteres para los nombre
 CREATE TABLE productos(
 
 id_producto INT PRIMARY KEY,
-descripcion TEXT,
-precio DECIMAL (18,2),
+descripcion VARCHAR (255),
+precio DECIMAL (10,2),
 esta_activo VARCHAR(10)
 );
 
 -------- utilice INT en id_producto para que represente solo numero enteros,
-TEXT en descripcion porque se pueden escribir textos mas largos que con varchar,
-DECIMAL en precio con maximo 18 numeros delante y 2 decimales. se utiliza decimal y no float porque float da numeros aproximados,
+VARCHAR (255) en descripcion para tener mas margen de letras,
+DECIMAL en precio con maximo 10 numeros delante y 2 decimales. se utiliza decimal y no float porque float da numeros aproximados,
 VARCHAR esta_activo para describir brevemente si el prodicto se encuentra disponible.
