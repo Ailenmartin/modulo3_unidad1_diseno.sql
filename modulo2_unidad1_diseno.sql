@@ -10,22 +10,30 @@ USE RetailPro;
 
 -- 1 - creo tabla Clientes
 
-CREATE TABLE Clientes(
+CREATE TABLE clientes(
 
-ID_clientes INT PRIMARY KEY
-nombre VARCHAR(255),
-email NVARCHAR (50),
-perfil_bio NVARCHAR(200),
-fecha_registro DATE,
+id_clientes INT PRIMARY KEY,
+nombre VARCHAR(100),
+perfil_bio TEXT,
+fecha_registro DATE
 );
+
+----------- utilice INT para id_clientes para que se represente en numeros enteroo,
+VARCHAR (100) para nombre porque es un buen margen de caracteres para los nombres largos con doble apellidos,
+  TEXT en perfil_bio porque son textos largos, donde varchar quedaria muy corto,
+  DATE en fecha de registro, porque es la nomenclatura correcta.-----------
 
 -- 2 creo tabla Productos
 
-CREATE TABLE Productos(
+CREATE TABLE productos(
 
 id_producto INT PRIMARY KEY,
-descripcion VARCHAR (50),
+descripcion TEXT,
 precio DECIMAL (18,2),
 esta_activo VARCHAR(10)
 );
 
+-------- utilice INT en id_producto para que represente solo numero enteros,
+TEXT en descripcion porque se pueden escribir textos mas largos que con varchar,
+DECIMAL en precio con maximo 18 numeros delante y 2 decimales. se utiliza decimal y no float porque float da numeros aproximados,
+VARCHAR esta_activo para describir brevemente si el prodicto se encuentra disponible.
